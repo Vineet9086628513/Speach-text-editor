@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png"
+    />
+
+    <meta name="apple-mobile-web-app-title" content="CodePen" />
+
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico"
+    />
+
+    <link
+      rel="mask-icon"
+      type="image/x-icon"
+      href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg"
+      color="#111"
+    />
+
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+    <title>CodePen - Speech Text Reader</title>
+
+    <link rel="canonical" href="https://codepen.io/solygambas/pen/QWGPLVM" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script>
+      window.console = window.console || function (t) {};
+    </script>
+  </head>
+
+  <body translate="no">
+    <div class="container">
+      <h1>Speech Text Reader</h1>
+      <button id="toggle" class="btn btn-toggle">Toggle Text Box</button>
+    </div>
+    <div id="text-box" class="text-box">
+      <div id="close" class="close"><i class="fas fa-times"></i></div>
+      <h3>Choose Voice</h3>
+      <select id="voices">
+        <option value="Microsoft David - English (United States)">
+          Microsoft David - English (United States) en-US
+        </option>
+        <option value="Microsoft Ravi - English (India)">
+          Microsoft Ravi - English (India) en-IN
+        </option>
+        <option value="Microsoft Heera - English (India)">
+          Microsoft Heera - English (India) en-IN
+        </option>
+        <option value="Microsoft Mark - English (United States)">
+          Microsoft Mark - English (United States) en-US
+        </option>
+        <option value="Microsoft Zira - English (United States)">
+          Microsoft Zira - English (United States) en-US
+        </option>
+        <option value="Google Deutsch">Google Deutsch de-DE</option>
+        <option value="Google US English">Google US English en-US</option>
+        <option value="Google UK English Female">
+          Google UK English Female en-GB
+        </option>
+        <option value="Google UK English Male">
+          Google UK English Male en-GB
+        </option>
+        <option value="Google español">Google español es-ES</option>
+        <option value="Google español de Estados Unidos">
+          Google español de Estados Unidos es-US
+        </option>
+        <option value="Google français">Google français fr-FR</option>
+        <option value="Google हिन्दी">Google हिन्दी hi-IN</option>
+      </select>
+      <textarea id="text" placeholder="Enter text to read..."></textarea>
+      <button class="btn" id="read">Read Text</button>
+    </div>
+    <main>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/drink.jpg?raw=true"
+          alt="I'm Thirsty"
+        />
+        <p class="info">I'm Thirsty</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/food.jpg?raw=true"
+          alt="I'm Hungry"
+        />
+        <p class="info">I'm Hungry</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/tired.jpg?raw=true"
+          alt="I'm Tired"
+        />
+        <p class="info">I'm Tired</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/hurt.jpg?raw=true"
+          alt="I'm Hurt"
+        />
+        <p class="info">I'm Hurt</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/happy.jpg?raw=true"
+          alt="I'm Happy"
+        />
+        <p class="info">I'm Happy</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/angry.jpg?raw=true"
+          alt="I'm Angry"
+        />
+        <p class="info">I'm Angry</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/sad.jpg?raw=true"
+          alt="I'm Sad"
+        />
+        <p class="info">I'm Sad</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/scared.jpg?raw=true"
+          alt="I'm Scared"
+        />
+        <p class="info">I'm Scared</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/outside.jpg?raw=true"
+          alt="I Want To Go Outside"
+        />
+        <p class="info">I Want To Go Outside</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/home.jpg?raw=true"
+          alt="I Want To Go Home"
+        />
+        <p class="info">I Want To Go Home</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/school.jpg?raw=true"
+          alt="I Want To Go To School"
+        />
+        <p class="info">I Want To Go To School</p>
+      </div>
+      <div class="box">
+        <img
+          src="https://github.com/bradtraversy/vanillawebprojects/blob/master/speech-text-reader/img/grandma.jpg?raw=true"
+          alt="I Want To Go To Grandmas"
+        />
+        <p class="info">I Want To Go To Grandmas</p>
+      </div>
+    </main>
+
+    <script id="rendered-js" src="./main.js"></script>
+  </body>
+</html>
